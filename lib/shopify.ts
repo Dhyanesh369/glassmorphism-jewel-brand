@@ -12,7 +12,7 @@ export async function shopifyFetch({
   variables = {},
 }: {
   query: string;
-  variables?: any;
+  variables?: Record<string, unknown>;
 }) {
   const endpoint = `https://${domain}/api/2024-01/graphql.json`;
 

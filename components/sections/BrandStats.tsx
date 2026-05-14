@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion, animate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { defaultViewport, aerisEasing } from "@/lib/animations";
 
@@ -16,7 +16,7 @@ function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: str
           setHasAnimated(true);
           const controls = animate(0, target, {
             duration: 2,
-            ease: aerisEasing as any,
+            ease: [...aerisEasing],
             onUpdate: (value) => setCount(Math.round(value)),
           });
           return () => controls.stop();
@@ -56,7 +56,7 @@ export default function BrandStats() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={defaultViewport}
-              transition={{ duration: 1, delay: index * 0.1, ease: aerisEasing }}
+              transition={{ duration: 1, delay: index * 0.1, ease: [...aerisEasing] }}
               className="flex flex-col gap-3 text-center items-center"
             >
               <AnimatedCounter target={stat.value} suffix={stat.suffix} />

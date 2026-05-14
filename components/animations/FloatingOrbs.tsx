@@ -39,8 +39,10 @@ export default function FloatingOrbs({ count = 5, section = "hero" }: { count?: 
       delay: Math.random() * 5,
       color: colors[i % colors.length],
     }));
-    setOrbs(generated);
-  }, [count, section]);
+    if (orbs.length === 0) {
+      setOrbs(generated);
+    }
+  }, [count, section, orbs.length]);
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">

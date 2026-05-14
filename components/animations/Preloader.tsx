@@ -4,22 +4,23 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Preloader() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(() => {
+    if (typeof window !== "undefined") {
+      const hasVisited = sessionStorage.getItem("aeris-loaded");
+      return !hasVisited;
+    }
+    return true;
+  });
 
   useEffect(() => {
-    // Check if this is the first visit in this session
-    const hasVisited = sessionStorage.getItem("aeris-loaded");
-    if (hasVisited) {
-      setIsLoading(false);
-      return;
+    if (isLoading) {
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+        sessionStorage.setItem("aeris-loaded", "true");
+      }, 2400);
+      return () => clearTimeout(timer);
     }
-
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-      sessionStorage.setItem("aeris-loaded", "true");
-    }, 2400);
-    return () => clearTimeout(timer);
-  }, []);
+  }, [isLoading]);
 
   return (
     <AnimatePresence>

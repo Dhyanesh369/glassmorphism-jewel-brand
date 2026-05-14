@@ -40,10 +40,10 @@ export default function SearchOverlay({ isOpen, onClose }: { isOpen: boolean; on
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
-      setQuery("");
     }
     return () => {
       document.body.style.overflow = "unset";
+      if (!isOpen) setQuery("");
     };
   }, [isOpen]);
 

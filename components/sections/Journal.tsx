@@ -63,7 +63,7 @@ export default function Journal() {
               <div className="h-px flex-grow bg-foreground/5" />
               <span className="text-[10px] font-light text-foreground/30">May 2024</span>
             </div>
-            <h2 className="font-heading text-4xl sm:text-6xl">The Art of <br /> <span className="italic opacity-80">Layering.</span></h2>
+            <motion.h2 style={{ x: textX }} className="font-heading text-4xl sm:text-6xl">The Art of <br /> <span className="italic opacity-80">Layering.</span></motion.h2>
             <p className="max-w-md text-base font-light leading-relaxed text-foreground/60">
               Discover the curated rules of weightless composition. From metal mixing 
               to length hierarchy, learn how to build your personal artifact collection.

@@ -8,6 +8,9 @@ import PageTransition from "@/components/animations/PageTransition";
 import Preloader from "@/components/animations/Preloader";
 import Navbar from "@/components/sections/Navbar";
 import { CartProvider } from "@/lib/context/CartContext";
+import ScrollProgress from "@/components/animations/ScrollProgress";
+import NotificationManager from "@/components/notifications/NotificationManager";
+import NewsletterPopover from "@/components/notifications/NewsletterPopover";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -76,9 +79,6 @@ const jsonLd = {
   ]
 };
 
-import ScrollProgress from "@/components/animations/ScrollProgress";
-import NotificationManager from "@/components/notifications/NotificationManager";
-import NewsletterPopover from "@/components/notifications/NewsletterPopover";
 
 export default function RootLayout({
   children,

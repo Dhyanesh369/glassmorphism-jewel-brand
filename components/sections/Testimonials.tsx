@@ -47,9 +47,9 @@ export default function Testimonials() {
         >
           <span className="text-[10px] font-medium tracking-[0.4em] uppercase text-foreground/40">Voices</span>
           <h2 className="font-heading text-4xl sm:text-6xl text-shimmer">The Curation Circle</h2>
-          <p className="max-w-md text-sm font-light text-foreground/40">
-            Perspectives from those who've embraced the ritual.
-          </p>
+            <p className="max-w-md text-sm font-light text-foreground/40">
+              Perspectives from those who&apos;ve embraced the ritual.
+            </p>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">

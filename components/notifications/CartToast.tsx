@@ -1,8 +1,8 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, ShoppingBag, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Check, X } from "lucide-react";
+import { useEffect } from "react";
 import Image from "next/image";
 
 interface CartToastProps {
